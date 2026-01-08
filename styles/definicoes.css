@@ -1,0 +1,8 @@
+.card-front, .card-back{
+    max-width: 200px;
+    max-height: 285px;
+}
+.card{
+    min-width: 200px;
+    min-height: 285px;
+}

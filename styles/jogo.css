@@ -1,0 +1,15 @@
+.card-front, .card-back{
+    max-width: 200px;
+    max-height: 285px;
+}
+.card {
+    min-width: 200px;
+    min-height: 285px;
+    transition: min-width 0.5s;
+    margin: 5px;
+}
+
+.card.shuffle {
+    min-width: 0px;
+    min-height: 0px;
+}

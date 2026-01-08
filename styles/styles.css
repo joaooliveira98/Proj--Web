@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+.h-center {
+    align-content: center;
+}
+
+.v-center {
+    justify-content: center;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+
+.field-container {
+    width: fit-content;
+    margin-bottom: 5px;
+    margin-top: 5px
+}
+
+.label{
+    width: fit-content;
+    text-align: left
+}
+
+.form {
+    width: fit-content;
+}
+
+.justified-wrapper {
+    max-width: 70vw;
+    margin: auto;
+}
