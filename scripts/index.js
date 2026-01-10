@@ -1,9 +1,17 @@
 "use strict";
 function main() {
-    document.getElementById("login").addEventListener("click", () => {
+    document.getElementById("login").addEventListener("click", async () => {
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
-        login(username,password);
+        const message = document.getElementById("message");
+        const result = await login(username,password);
+        if(result){
+            window.location.href = 'home.html'
+        }
+        else{
+            message.textContent = "Erro no login!";
+            message.classList = [];
+        }
     })
 }
 onload = main;

@@ -20,7 +20,7 @@ body {
 .field-container {
     width: fit-content;
     margin-bottom: 5px;
-    margin-top: 5px
+    margin-top: 5px;
 }
 
 .label{
@@ -35,4 +35,13 @@ body {
 .justified-wrapper {
     max-width: 70vw;
     margin: auto;
+}
+
+#message {
+    color:red;
+    max-width: 169px;
+}
+
+#message.invisible {
+    visibility: hidden;
 }

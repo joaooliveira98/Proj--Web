@@ -80,7 +80,6 @@ async function login(username = String(), password = String()) {
     // Find user by username (case-sensitive as before)
     const found = usernames.find(x => x.Username === username);
     if (!found) {
-        console.log("Credenciais incorretas!");
         return false;
     }
     const expectedHash = found.PasswordHash;
@@ -89,10 +88,8 @@ async function login(username = String(), password = String()) {
     if (providedHash === expectedHash) {
         document.cookie = `loggedIn=${username}`;
         console.log(document.cookie);
-        console.log("login");
         return true;
     } else {
-        console.log("Credenciais incorretas!");
         return false;
     }
 }
