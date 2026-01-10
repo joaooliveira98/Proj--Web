@@ -5,6 +5,11 @@ function main() {
     listCards(listHtml);
     shuffle();
     window.pairedCards = 0;
+    
+    window.tries = 0;
+    const numberTriesHtml = document.getElementById('number-tries');
+    numberTriesHtml.textContent="Score: "+window.tries;
+
     let difficulty = getDifficulty()
     const difficultyHtml = document.getElementById('difficulty');
     difficultyHtml.selectedIndex = difficulty;
@@ -30,6 +35,10 @@ function cardClick(idx=Number()){
     
     if (checknum === clicknum)
         return
+    
+    window.tries += 1;
+    const numberTriesHtml = document.getElementById('number-tries');
+    numberTriesHtml.textContent="Score: "+window.tries;
     
     checknum = checknum - checknum%2;
     clicknum = clicknum - clicknum%2;
@@ -60,6 +69,7 @@ function cardClick(idx=Number()){
 function novoJogo() {
     window.checkedCard = null;
     window.pairedCards = 0;
+    window.tries = 0;
     const difficultyHtml = document.getElementById('difficulty');
     let difficulty = difficultyHtml.selectedIndex;
     localStorage.setItem("Difficulty", difficulty);
