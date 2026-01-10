@@ -23,6 +23,8 @@ function main(){
         }
     });
 }
-
+if ((new Map(document.cookie.split('; ').map((x) =>x.split('=')))).has('loggedIn')) {
+    window.location.href = 'home.html'
+}
 onload = main;
 

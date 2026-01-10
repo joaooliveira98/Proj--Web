@@ -42,6 +42,6 @@ body {
     max-width: 169px;
 }
 
-#message.invisible {
+.invisible {
     visibility: hidden;
 }
