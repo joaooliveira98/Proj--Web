@@ -6,3 +6,74 @@
     min-width: 200px;
     min-height: 285px;
 }
+
+/* Estilizando os contadores para parecerem "cards" pequenos */
+#number-cards, 
+#number-tries {
+    background-color: #4a4a4a;    /* Cinza dos cards */
+    color: #ffffff;               /* Texto branco */
+    border: 2px solid #e67e22;    /* Borda laranja */
+    padding: 5px 12px;            /* Espaçamento interno */
+    border-radius: 4px;           /* Arredondamento igual aos inputs */
+    font-family: sans-serif;      /* Mesma fonte do site */
+    font-weight: bold;
+    display: inline-block;        /* Permite aplicar padding e bordas corretamente */
+    margin-left: 10px;            /* Afasta do botão "Novo Jogo" */
+    min-width: 30px;              /* Garante que não fique muito pequeno */
+    text-align: center;
+}
+
+/* Opcional: Adicionar um rótulo antes do número via CSS se desejar */
+#number-cards::before {
+    content: "Cartas: ";
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #bdc3c7;               /* Cinza claro para o rótulo */
+    margin-right: 5px;
+}
+/* Aplica o mesmo estilo ao select e aos contadores */
+#difficulty, 
+#number-cards, 
+#number-tries {
+    background-color: #4a4a4a;    /* Cinza escuro do fundo */
+    color: white;                 /* Texto branco */
+    border: 2px solid #e67e22;    /* Borda laranja */
+    border-radius: 8px;           /* Arredondamento das bordas */
+    padding: 5px 15px;            /* Espaçamento interno */
+    font-size: 16px;              /* Tamanho da fonte */
+    font-family: inherit;         /* Usa a mesma fonte da página */
+    appearance: none;             /* Remove o estilo padrão do sistema (Windows/Chrome) */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Opcional: Adiciona uma seta customizada para o select, já que o 'appearance: none' a remove */
+#difficulty {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px; /* Dá espaço para a seta não ficar em cima do texto */
+}
+.controls-container {
+    display: flex;            /* Ativa o modo flexbox */
+    justify-content: center;  /* Centraliza horizontalmente na página */
+    align-items: center;      /* Centraliza verticalmente todos os itens entre si */
+    gap: 15px;                /* Cria um espaçamento uniforme entre os elementos */
+    margin-bottom: 20px;      /* Afasta os controles das cartas abaixo */
+    flex-wrap: wrap;          /* Se a tela for pequena, eles quebram linha suavemente */
+}
+
+/* Garanta que o select e o span tenham alturas semelhantes para não parecerem tortos */
+#difficulty, 
+#number-cards, 
+#number-tries,
+button {
+    height: 40px;             /* Define uma altura fixa igual para todos */
+    display: flex;
+    align-items: center;      /* Centraliza o texto dentro do span/botão */
+    justify-content: center;
+    box-sizing: border-box;   /* Garante que o padding não aumente o tamanho final */
+    margin: 0;                /* Remove margens antigas que podem entortar o layout */
+}
