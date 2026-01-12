@@ -99,8 +99,6 @@ button:hover {
     box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
 }
 
-/* Mensagem de Erro/Sucesso */
-.invisible { display: none; }
 #message {
     background: rgba(255, 0, 0, 0.2);
     padding: 8px;

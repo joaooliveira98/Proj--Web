@@ -96,11 +96,6 @@ button {
     color: #764ba2;
 }
 
-/* Utilitários */
-.invisible {
-    display: none;
-}
-
 #message {
     color: #ff8a8a;
     font-size: 0.8rem;
