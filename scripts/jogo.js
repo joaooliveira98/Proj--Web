@@ -8,7 +8,7 @@ function main() {
     
     window.tries = 0;
     const numberTriesHtml = document.getElementById('number-tries');
-    numberTriesHtml.textContent="Score: "+window.tries;
+    numberTriesHtml.textContent="Tentativas: "+window.tries;
 
     let difficulty = getDifficulty()
     const difficultyHtml = document.getElementById('difficulty');
@@ -38,7 +38,7 @@ function cardClick(idx=Number()){
     
     window.tries += 1;
     const numberTriesHtml = document.getElementById('number-tries');
-    numberTriesHtml.textContent="Score: "+window.tries;
+    numberTriesHtml.textContent="Tentativas: "+window.tries;
     
     checknum = checknum - checknum%2;
     clicknum = clicknum - clicknum%2;
@@ -51,6 +51,9 @@ function cardClick(idx=Number()){
         window.pairedCards+=2;
         const numberCardsHtml = document.getElementById('number-cards');
         numberCardsHtml.textContent=window.pairedCards+"/"+numberCards;
+        if(window.pairedCards === numberCards){
+            document.getElementById("parabens").classList = [];
+        }
     }
     else
     {
@@ -70,6 +73,7 @@ function novoJogo() {
     window.checkedCard = null;
     window.pairedCards = 0;
     window.tries = 0;
+    document.getElementById("parabens").classList = [];
     const difficultyHtml = document.getElementById('difficulty');
     let difficulty = difficultyHtml.selectedIndex;
     localStorage.setItem("Difficulty", difficulty);
