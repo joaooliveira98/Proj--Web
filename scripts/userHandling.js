@@ -49,7 +49,7 @@ window.cryptoHelper = cryptoHelper;
 async function registerNewUser(newUsername = String(), password = String()) {
     let message = "", status = "OK";
     if (!newUsername || typeof newUsername !== 'string' || newUsername.trim() === "") {
-        message = "Nome de Usuario invalido!";
+        message = "Nome de utilizador invalido!";
         status = "E";
         return { message, status };
     }
@@ -62,7 +62,7 @@ async function registerNewUser(newUsername = String(), password = String()) {
     let usernames = JSON.parse(localStorage.getItem("usernames")) || [];
     // Avoid duplicates (case-insensitive)
     if (usernames.some(u => u.Username && u.Username.toLowerCase() === newUsername.toLowerCase())) {
-        message = `Nome de usuario "${newUsername}" já existe.`;
+        message = `Nome de utilizador "${newUsername}" ja existe.`;
         status = "E";
         return { message, status };
     }
