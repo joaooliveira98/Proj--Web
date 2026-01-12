@@ -33,7 +33,7 @@ body {
 
 
 .field-container {
-    width: fit-content;
+    /* width: fit-content; */
     margin-bottom: 5px;
     margin-top: 5px;
 }

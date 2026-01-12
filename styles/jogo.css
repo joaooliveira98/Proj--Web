@@ -48,6 +48,8 @@ button:hover {
     color:white;            /* Texto branco para destaque */
     font-weight: bold;
     margin-left: 10px;
+    float: right;
+    margin-right: 35px;
 }
 
 h1 {
