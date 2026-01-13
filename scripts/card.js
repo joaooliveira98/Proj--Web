@@ -69,7 +69,7 @@ function listCards(listHtml=Element(), disabled=Boolean()){
     var fronts = JSON.parse(localStorage.getItem("cardImages"));
     if (fronts === null || fronts === undefined)
         fronts = {};
-    for (let index = 0; index < Object.keys(fronts).length*2; index++) {
+    for (let index = 0; index < Object.keys(fronts).length*2 && index < numCards; index++) {
         cardImages[index] = fronts[index - (index%2)];
     }
     

@@ -1,0 +1,114 @@
+/* Reset básico e fundo do jogo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    /* Fundo dinâmico para destacar o efeito vidro */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Principal com efeito Glassmorphism */
+.form-wrapper {
+    background: rgba(255, 255, 255, 0.15); /* Transparência */
+    backdrop-filter: blur(12px); /* Desfoque do fundo */
+    -webkit-backdrop-filter: blur(12px); /* Suporte Safari */
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Sombra suave */
+    padding: 40px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* Organização dos campos */
+.field-container {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.label label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+/* Inputs Estilizados */
+input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Garante que o padding não quebre a largura */
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+}
+
+/* Botões */
+button {
+    cursor: pointer;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.2s, background 0.3s;
+}
+
+#login {
+    background-color: #4facfe;
+    color: white;
+}
+
+#login:hover {
+    background-color: #00f2fe;
+    transform: translateY(-2px);
+}
+
+#register {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid white;
+}
+
+#register:hover {
+    background: white;
+    color: #764ba2;
+}
+
+#message {
+    color: #ff8a8a;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+    .form-wrapper {
+        padding: 25px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+}

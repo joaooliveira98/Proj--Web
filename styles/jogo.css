@@ -13,3 +13,47 @@
     min-width: 0px;
     min-height: 0px;
 }
+
+/* Estilizando o menu de dificuldade e o botão de novo jogo */
+#difficulty, 
+button {
+    background-color: #333333; /* Fundo cinza escuro para combinar com os cards */
+    color: white;               /* Texto branco */
+    border: 2px solid #e67e22;  /* Borda laranja idêntica à dos cards */
+    padding: 10px 15px;         /* Espaço interno para ficar mais encorpado */
+    border-radius: 4px;         /* Cantos levemente arredondados */
+    font-size: 1rem;            /* Tamanho de fonte legível */
+    cursor: pointer;            /* Cursor de mão ao passar o mouse */
+    outline: none;              /* Remove o contorno padrão do navegador */
+    margin-right: 10px;         /* Espaço entre o select e o botão */
+    transition: background 0.3s; /* Transição suave para o hover */
+}
+
+/* Efeito ao passar o mouse (Hover) */
+#difficulty:hover, 
+button:hover {
+    background-color: #444444;  /* Fica levemente mais claro */
+    border-color: #d35400;      /* Laranja um pouco mais intenso */
+}
+
+/* Estilização das opções dentro do select */
+#difficulty option {
+    background-color: #1a252f;  /* Fundo escuro para a lista suspensa */
+    color: white;
+}
+
+/* Estilo para os spans de info (cartas e tentativas) */
+#number-cards, 
+#number-tries {
+    color:white;            /* Texto branco para destaque */
+    font-weight: bold;
+    margin-left: 10px;
+    float: right;
+    margin-right: 35px;
+}
+
+h1 {
+    color: white;            /* Título em branco para destaque */
+    text-align: center;
+    margin-bottom: 20px;
+}

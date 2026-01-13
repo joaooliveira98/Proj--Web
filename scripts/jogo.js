@@ -5,6 +5,18 @@ function main() {
     listCards(listHtml);
     shuffle();
     window.pairedCards = 0;
+    
+    window.tries = 0;
+    const numberTriesHtml = document.getElementById('number-tries');
+    numberTriesHtml.textContent="Tentativas: "+window.tries;
+
+    let difficulty = getDifficulty()
+    const difficultyHtml = document.getElementById('difficulty');
+    difficultyHtml.selectedIndex = difficulty;
+
+    window.numberCards = getNumberOfCards(difficulty);
+    const numberCardsHtml = document.getElementById('number-cards');
+    numberCardsHtml.textContent=window.pairedCards+"/"+numberCards;
 }
 onload = main;
 
@@ -24,6 +36,10 @@ function cardClick(idx=Number()){
     if (checknum === clicknum)
         return
     
+    window.tries += 1;
+    const numberTriesHtml = document.getElementById('number-tries');
+    numberTriesHtml.textContent="Tentativas: "+window.tries;
+    
     checknum = checknum - checknum%2;
     clicknum = clicknum - clicknum%2;
     
@@ -32,6 +48,13 @@ function cardClick(idx=Number()){
         checkedCard.checkBox.checked = true;
         checkBox.disabled = true;
         checkBox.checked = true;
+        window.pairedCards+=2;
+        const numberCardsHtml = document.getElementById('number-cards');
+        numberCardsHtml.textContent=window.pairedCards+"/"+numberCards;
+        if(window.pairedCards === numberCards){
+            document.getElementById("parabens").classList = [];
+            setToLeaderBoard(window.tries, (new Map(document.cookie.split('; ').map((x) =>x.split('=')))).get('loggedIn'))
+        }
     }
     else
     {
@@ -50,6 +73,21 @@ function cardClick(idx=Number()){
 function novoJogo() {
     window.checkedCard = null;
     window.pairedCards = 0;
+    window.tries = 0;
+    document.getElementById("parabens").classList = [];
+    const difficultyHtml = document.getElementById('difficulty');
+    let difficulty = difficultyHtml.selectedIndex;
+    localStorage.setItem("Difficulty", difficulty);
+
+    const prevNumberCards = window.numberCards;
+    window.numberCards = getNumberOfCards(difficulty);
+    const numberCardsHtml = document.getElementById('number-cards');
+    numberCardsHtml.textContent=window.pairedCards+"/"+window.numberCards;
+    if (prevNumberCards !== window.numberCards) {
+        const listHtml = document.getElementById('cards-list');
+        listCards(listHtml);
+        window.seed = undefined;
+    }
     const cards = Array.from(document.getElementsByClassName('card'));
     cards.map(x => x.children[0])
         .forEach( x => {

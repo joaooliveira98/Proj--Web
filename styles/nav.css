@@ -1,13 +1,14 @@
 nav {
-    
     position: fixed;
     top: 1em;
     left:1em;
     gap : 1px;
-    
+    width: 90%;
 }
-nav li{
-display: inline;
+nav li {
+    display: inline;
+}
 
-
+#logout {
+    float: right;
 }
