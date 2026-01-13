@@ -53,6 +53,7 @@ function cardClick(idx=Number()){
         numberCardsHtml.textContent=window.pairedCards+"/"+numberCards;
         if(window.pairedCards === numberCards){
             document.getElementById("parabens").classList = [];
+            setToLeaderBoard(window.tries, (new Map(document.cookie.split('; ').map((x) =>x.split('=')))).get('loggedIn'))
         }
     }
     else
